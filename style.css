@@ -1,0 +1,1058 @@
+@font-face {
+    font-family: "B Nazanin";
+    src: url("https://cdn.jsdelivr.net/gh/rastikerdar/b-nazanin-font@v1.0.0/B-NAZANIN.TTF");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "B Nazanin", Tahoma, sans-serif;
+    background: #080b1a;
+    color: white;
+    min-height: 100vh;
+    direction: rtl;
+}
+
+
+
+.header {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(10, 15, 40, 0.95);
+    border-bottom: 1px solid #384cff;
+    box-shadow: 0 0 20px rgba(60, 80, 255, 0.25);
+}
+
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    color: white;
+    text-shadow:
+        0 0 8px #4d6bff,
+        0 0 18px #6c4dff;
+}
+
+
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #6d7cff;
+    text-shadow: 0 0 10px #5368ff;
+}
+
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hero{
+    text-align: center;}
+    /* ابزار شمارش متن */
+
+.text-tool {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: rgba(15, 20, 50, 0.8);
+    border: 1px solid #536dff;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(80, 90, 255, 0.2);
+}
+
+.text-tool h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.text-tool textarea {
+    width: 100%;
+    min-height: 220px;
+
+    padding: 20px;
+
+    background: #080b1a;
+    color: white;
+
+    border: 1px solid #536dff;
+    border-radius: 15px;
+
+    outline: none;
+    resize: vertical;
+
+    font-family: "B Nazanin", Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.text-tool textarea:focus {
+    box-shadow: 0 0 15px rgba(83, 109, 255, 0.5);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.stats div {
+    min-width: 130px;
+    padding: 15px;
+
+    text-align: center;
+
+    background: #101631;
+    border: 1px solid #536dff;
+    border-radius: 15px;
+}
+
+.stats span {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: #8c9cff;
+}
+
+.stats p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+.why-zoniva {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.why-zoniva h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.why-description {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.why-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    width: 220px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    background: #111;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: #7c3cff;
+    box-shadow: 0 0 25px rgba(124, 60, 255, 0.25);
+}
+
+.why-card span {
+    font-size: 35px;
+}
+
+.why-card h3 {
+    margin: 15px 0 10px;
+}
+
+.why-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.tools {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.tools h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.tools-description {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+
+
+
+.tools-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.tool-card {
+    width: 230px;
+    padding: 28px 22px;
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 22px;
+    transition: 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: #7c3cff;
+    box-shadow: 0 0 28px rgba(124, 60, 255, 0.25);
+}
+
+
+
+
+.tool-icon {
+    display: block;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.tool-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.tool-card p {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+
+
+
+.tool-button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 12px;
+    background: #7c3cff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tool-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(124, 60, 255, 0.4);
+}
+
+
+.tools-page {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.tools-page h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #9d6cff,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 25px rgba(124, 60, 255, 0.35);
+}
+
+.tools-page > p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 2;
+    margin: 0 auto 45px;
+    max-width: 600px;
+}
+
+.tools-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.home-section {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 35px auto;
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 25px;
+
+    transition: 0.3s ease;
+}
+
+.home-section:hover {
+    transform: translateY(-6px);
+
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 28px rgba(124, 60, 255, 0.18);
+}
+
+
+
+
+.section-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+
+
+.home-section h2 {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+
+
+.home-section p {
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    color: #999;
+
+    line-height: 2;
+}
+
+
+
+.section-button {
+    display: inline-block;
+
+    padding: 11px 23px;
+
+    border-radius: 12px;
+
+    background: #7c3cff;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.section-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(124, 60, 255, 0.4);
+}
+
+
+
+.audience {
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.audience h2 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.audience-description {
+    color: #999;
+
+    max-width: 600px;
+
+    margin: 0 auto 40px;
+
+    line-height: 2;
+}
+
+
+/* Audience Cards */
+
+.audience-cards {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
+}
+
+.audience-card {
+    width: 230px;
+
+    padding: 28px 20px;
+
+    background: #111;
+
+    border: 1px solid #252525;
+
+    border-radius: 22px;
+
+    transition: 0.3s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 25px rgba(124, 60, 255, 0.22);
+}
+
+.audience-card span {
+    display: block;
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.audience-card h3 {
+    margin-bottom: 10px;
+}
+
+.audience-card p {
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+
+.cta {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto 80px;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 60, 255, 0.18),
+            #111 65%
+        );
+
+    border: 1px solid #292929;
+}
+
+.cta h2 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #999;
+
+    margin-bottom: 25px;
+}
+
+
+
+.cta-button {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    border-radius: 14px;
+
+    background: #7c3cff;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(124, 60, 255, 0.5);
+}
+
+@media (max-width: 700px) {
+
+    .home-section {
+        width: 90%;
+
+        padding: 45px 20px;
+    }
+
+    .home-section h2 {
+        font-size: 25px;
+    }
+
+    .audience {
+        padding: 65px 20px;
+    }
+
+    .audience h2 {
+        font-size: 28px;
+    }
+
+    .audience-card {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .cta {
+        width: 90%;
+
+        padding: 50px 20px;
+
+        margin-bottom: 60px;
+    }
+
+    .cta h2 {
+        font-size: 27px;
+    }
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.12) rotate(3deg);
+
+    filter:
+        drop-shadow(0 0 8px rgba(124, 60, 255, 0.7))
+        drop-shadow(0 0 18px rgba(124, 60, 255, 0.35));
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.calculator-tool {
+    width: 90%;
+    max-width: 400px;
+
+    margin: 40px auto;
+    padding: 30px 20px;
+
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+.calculator-tool h2 {
+    margin-bottom: 20px;
+}
+
+#calculatorDisplay {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+    background: #080808;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    font-size: 24px;
+    text-align: left;
+}
+
+.calculator-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.calculator-buttons button {
+    min-height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #1b1b1b;
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.calculator-buttons button:hover {
+    background: #7c3cff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(124, 60, 255, 0.3);
+}
+
+.equal-button {
+    grid-column: span 4;
+
+    background: #7c3cff !important;
+}
+
+.equal-button:hover {
+    box-shadow:
+        0 0 25px rgba(124, 60, 255, 0.5) !important;
+}
+/* =========================
+   Unit Converter
+========================= */
+
+.unit-converter-tool {
+    width: 90%;
+    max-width: 400px;
+
+    margin: 40px auto;
+    padding: 30px 20px;
+
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.unit-converter-tool:hover {
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 28px rgba(124, 60, 255, 0.18);
+}
+
+
+.unit-converter-tool h2 {
+    margin-bottom: 20px;
+}
+
+
+#unitInput {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    background: #080808;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+
+#unitInput:focus {
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 12px rgba(124, 60, 255, 0.25);
+}
+
+
+#unitFrom,
+#unitTo {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 12px;
+
+    background: #080808;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+#unitFrom:focus,
+#unitTo:focus {
+    border-color: #7c3cff;
+}
+
+
+#convertUnit {
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+.unit-result {
+    margin-top: 20px;
+
+    padding: 16px;
+
+    background: #080808;
+
+    border: 1px solid #252525;
+    border-radius: 12px;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    min-height: 24px;
+
+    transition: 0.3s ease;
+}
+/* =========================
+   Grade Calculator
+========================= */
+
+.grade-calculator-tool {
+    width: 90%;
+    max-width: 400px;
+
+    margin: 40px auto;
+    padding: 30px 20px;
+
+    background: #111;
+    border: 1px solid #252525;
+    border-radius: 25px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.grade-calculator-tool:hover {
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 28px rgba(124, 60, 255, 0.18);
+}
+
+
+.grade-calculator-tool h2 {
+    margin-bottom: 20px;
+}
+
+
+#gradeInput {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    background: #080808;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+
+#gradeInput:focus {
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 12px rgba(124, 60, 255, 0.25);
+}
+
+
+.grade-calculator-tool .tool-button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.grades-list {
+    min-height: 25px;
+
+    margin: 10px 0 20px;
+
+    padding: 12px;
+
+    background: #080808;
+
+    border: 1px solid #252525;
+    border-radius: 12px;
+
+    color: #bbb;
+
+    line-height: 1.8;
+}
+
+
+#averageResult {
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+/* =========================
+   About Page
+========================= */
+
+.about-page {
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto 80px;
+
+    text-align: center;
+}
+
+
+/* عنوان */
+
+.about-page > h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+
+/* توضیح اصلی */
+
+.about-page > p {
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    color: #999;
+
+    line-height: 2;
+}
+
+
+/* کارت‌ها */
+
+.about-card {
+    margin: 20px auto;
+
+    padding: 30px 25px;
+
+    background: #111;
+
+    border: 1px solid #252525;
+
+    border-radius: 22px;
+
+    transition: 0.3s ease;
+}
+
+
+/* افکت هاور */
+
+.about-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #7c3cff;
+
+    box-shadow:
+        0 0 28px rgba(124, 60, 255, 0.18);
+}
+
+
+/* آیکون */
+
+.about-card span {
+    display: block;
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+
+/* عنوان کارت */
+
+.about-card h2 {
+    margin-bottom: 10px;
+}
+
+
+/* متن کارت */
+
+.about-card p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #999;
+
+    line-height: 2;
+}
+
+
+/* اسم برنامه نویس */
+
+.about-card strong {
+    color: #b58cff;
+}
+
+
+/* دکمه کانال */
+
+.about-card .section-button {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+    .about-page {
+        margin-top: 40px;
+    }
+
+
+    .about-page > h1 {
+        font-size: 29px;
+    }
+
+
+    .about-page > p {
+        font-size: 14px;
+    }
+
+
+    .about-card {
+        padding: 25px 18px;
+    }
+
+
+    .about-card span {
+        font-size: 38px;
+    }
+
+
+    .about-card h2 {
+        font-size: 21px;
+    }
+
+
+    .about-card p {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ابزارها | Zoniva</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         Header
+    ========================== -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <img
+                src="logo.png"
+                alt="Zoniva Logo"
+                class="site-logo"
+            >
+
+            <div class="logo">
+                ZONIVA
+            </div>
+
+        </div>
+
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="menu"
+            id="menu"
+        >
+
+            <a href="index.html">
+                خانه
+            </a>
+
+            <a href="tools.html">
+                ابزارها
+            </a>
+
+            <a href="about.html">
+                درباره ما
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             Tools Page
+        ========================== -->
+
+        <section class="tools-page">
+
+            <h1>
+                ابزارهای Zoniva
+            </h1>
+
+            <p>
+                ابزارهای ساده، سریع و کاربردی برای انجام کارهای روزمره
+            </p>
+
+
+            <!-- =========================
+                 Tool Cards
+            ========================== -->
+
+            <div class="tools-grid">
+
+
+                <!-- Text Counter Card -->
+
+                <div class="tool-card">
+
+                    <span class="tool-icon">
+                        📝
+                    </span>
+
+                    <h2>
+                        شمارش متن
+                    </h2>
+
+                    <p>
+                        تعداد کلمات و حروف متن خودت رو به‌سرعت بشمار.
+                    </p>
+
+                    <button
+                        class="tool-button"
+                        id="textToolBtn"
+                    >
+                        استفاده از ابزار
+                    </button>
+
+                </div>
+
+
+
+                <!-- Calculator Card -->
+
+                <div class="tool-card">
+
+                    <span class="tool-icon">
+                        🧮
+                    </span>
+
+                    <h2>
+                        محاسبه‌گر
+                    </h2>
+
+                    <p>
+                        محاسبات ریاضی خودت رو سریع و ساده انجام بده.
+                    </p>
+
+                    <button
+                        class="tool-button"
+                        id="calculatorBtn"
+                    >
+                        استفاده از ابزار
+                    </button>
+
+                </div>
+
+
+
+                <!-- Unit Converter Card -->
+
+                <div class="tool-card">
+
+                    <span class="tool-icon">
+                        📏
+                    </span>
+
+                    <h2>
+                        تبدیل واحد
+                    </h2>
+
+                    <p>
+                        واحدهای مختلف را سریع و ساده به یکدیگر تبدیل کن.
+                    </p>
+
+                    <button
+                        class="tool-button"
+                        id="unitConverterBtn"
+                    >
+                        استفاده از ابزار
+                    </button>
+
+                </div>
+
+
+
+                <!-- Grade Calculator Card -->
+
+                <div class="tool-card">
+
+                    <span class="tool-icon">
+                        📊
+                    </span>
+
+                    <h2>
+                        محاسبه معدل
+                    </h2>
+
+                    <p>
+                        نمره‌های خودت رو وارد کن و معدل رو سریع محاسبه کن.
+                    </p>
+
+                    <button
+                        class="tool-button"
+                        id="gradeCalculatorBtn"
+                    >
+                        استفاده از ابزار
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Text Counter Tool
+        ========================== -->
+
+        <section
+            class="text-tool"
+            id="textTool"
+            style="display: none;"
+        >
+
+            <h2>
+                شمارش متن
+            </h2>
+
+
+            <textarea
+                id="textInput"
+                placeholder="متنت رو اینجا بنویس..."
+            ></textarea>
+
+
+            <div class="stats">
+
+                <div>
+
+                    <span id="wordCount">
+                        0
+                    </span>
+
+                    <p>
+                        کلمه
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span id="charCount">
+                        0
+                    </span>
+
+                    <p>
+                        حرف
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Unit Converter Tool
+        ========================== -->
+
+        <section
+            class="unit-converter-tool"
+            id="unitConverterTool"
+            style="display: none;"
+        >
+
+            <h2>
+                تبدیل واحد
+            </h2>
+
+
+            <input
+                type="number"
+                id="unitInput"
+                placeholder="مقدار را وارد کن"
+            >
+
+
+            <select id="unitFrom">
+
+                <option value="km">
+                    کیلومتر
+                </option>
+
+                <option value="m">
+                    متر
+                </option>
+
+                <option value="cm">
+                    سانتی‌متر
+                </option>
+
+            </select>
+
+
+            <select id="unitTo">
+
+                <option value="km">
+                    کیلومتر
+                </option>
+
+                <option value="m">
+                    متر
+                </option>
+
+                <option value="cm">
+                    سانتی‌متر
+                </option>
+
+            </select>
+
+
+            <button
+                id="convertUnit"
+                class="tool-button"
+            >
+                تبدیل
+            </button>
+
+
+            <div
+                id="unitResult"
+                class="unit-result"
+            >
+                نتیجه اینجا نمایش داده می‌شود
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Grade Calculator Tool
+        ========================== -->
+
+        <section
+            class="grade-calculator-tool"
+            id="gradeCalculatorTool"
+            style="display: none;"
+        >
+
+            <h2>
+                محاسبه معدل
+            </h2>
+
+
+            <input
+                type="number"
+                id="gradeInput"
+                placeholder="نمره را وارد کن"
+                min="0"
+                max="20"
+                step="0.01"
+            >
+
+
+            <button
+                id="addGrade"
+                class="tool-button"
+            >
+                اضافه کردن نمره
+            </button>
+
+
+            <div
+                id="gradesList"
+                class="grades-list"
+            ></div>
+
+
+            <button
+                id="calculateAverage"
+                class="tool-button"
+            >
+                محاسبه معدل
+            </button>
+
+
+            <div
+                id="averageResult"
+                class="unit-result"
+            >
+                معدل اینجا نمایش داده می‌شود
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Calculator Tool
+        ========================== -->
+
+        <section
+            class="calculator-tool"
+            id="calculatorTool"
+            style="display: none;"
+        >
+
+            <h2>
+                محاسبه‌گر
+            </h2>
+
+
+            <input
+                type="text"
+                id="calculatorDisplay"
+                readonly
+                placeholder="0"
+            >
+
+
+            <div class="calculator-buttons"><button data-value="7">
+                    7
+                </button>
+
+                <button data-value="8">
+                    8
+                </button>
+
+                <button data-value="9">
+                    9
+                </button>
+
+                <button data-value="/">
+                    ÷
+                </button>
+
+
+                <button data-value="4">
+                    4
+                </button>
+
+                <button data-value="5">
+                    5
+                </button>
+
+                <button data-value="6">
+                    6
+                </button>
+
+                <button data-value="*">
+                    ×
+                </button>
+
+
+                <button data-value="1">
+                    1
+                </button>
+
+                <button data-value="2">
+                    2
+                </button>
+
+                <button data-value="3">
+                    3
+                </button>
+
+                <button data-value="-">
+                    −
+                </button>
+
+
+                <button data-value="0">
+                    0
+                </button>
+
+                <button data-value=".">
+                    .
+                </button>
+
+                <button id="clearCalculator">
+                    C
+                </button>
+
+                <button data-value="+">
+                    +
+                </button>
+
+
+                <button
+                    id="calculateResult"
+                    class="equal-button"
+                >
+                    =
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         JavaScript
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
