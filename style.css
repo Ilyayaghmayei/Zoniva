@@ -1451,11 +1451,12 @@ select:focus {
             scale(1);
     }
 }
-@media (max-width: 768px) {
 
-    html,
-    body {
-        background: #ffffff !important;
-    }
+html,
+body {
+    background-color: #ffffff !important;
+}
 
+body {
+    min-height: 100vh;
 }
