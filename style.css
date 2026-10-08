@@ -1,7 +1,3 @@
-/* =========================
-   ZONIVA — BLUE & WHITE
-========================= */
-
 :root {
     --blue: #1769ff;
     --blue-light: #69b7ff;
@@ -34,9 +30,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-   Header
-========================= */
 
 .header {
     position: sticky;
@@ -94,9 +87,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* =========================
-   Navigation
-========================= */
 
 .menu {
     display: flex;
@@ -125,9 +115,6 @@ body {
         0 0 18px rgba(23, 105, 255, 0.10);
 }
 
-/* =========================
-   Menu Button
-========================= */
 
 .menu-btn {
     display: none;
@@ -156,9 +143,7 @@ body {
         0 0 20px var(--blue-glow);
 }
 
-/* =========================
-   Hero
-========================= */
+
 
 .hero {
     position: relative;
@@ -204,7 +189,7 @@ body {
     z-index: -1;
 }
 
-/* Badge */
+
 
 .hero-badge {
     padding: 10px 18px;
@@ -225,7 +210,7 @@ body {
         0 0 20px rgba(23, 105, 255, 0.10);
 }
 
-/* Hero title */
+
 
 .hero h1 {
     max-width: 850px;
@@ -277,8 +262,7 @@ body {
     line-height: 2;
 }
 
-/* =========================Hero Buttons
-========================= */
+
 
 .hero-buttons {
     display: flex;
@@ -345,9 +329,7 @@ body {
     border-color: var(--blue);
 }
 
-/* =========================
-   Sections
-========================= */
+
 
 .why-zoniva,
 .tools,
@@ -392,9 +374,7 @@ body {
     line-height: 2;
 }
 
-/* =========================
-   Cards
-========================= */
+
 
 .why-card,
 .tool-card,
@@ -434,9 +414,7 @@ body {
         0 0 25px rgba(105, 183, 255, 0.12);
 }
 
-/* =========================
-   Why Cards
-========================= */
+
 
 .why-cards {
     display: flex;
@@ -472,9 +450,7 @@ body {
     line-height: 1.7;
 }
 
-/* =========================
-   Tools
-========================= */
+
 
 .tools-grid {
     display: flex;
@@ -520,9 +496,7 @@ body {
     margin-bottom: 22px;
 }
 
-/* =========================
-   Buttons
-========================= */
+
 
 .tool-button,
 .section-button,
@@ -559,9 +533,7 @@ body {
         rgba(23, 105, 255, 0.28);
 }
 
-/* =========================
-   Home Sections
-========================= */
+
 
 .home-section {
     width: 90%;
@@ -590,9 +562,7 @@ body {
     line-height: 2;
 }
 
-/* =========================
-   Audience
-========================= */
+
 
 .audience-cards {
     display: flex;
@@ -632,9 +602,7 @@ body {
     line-height: 1.8;
 }
 
-/* =========================
-   CTA
-========================= */
+
 
 .cta {
     width: 90%;
@@ -667,9 +635,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* =========================
-   Platform Banner
-========================= */
+
 
 .platform-banner {
     width: 90%;
@@ -712,9 +678,7 @@ body {
     font-weight: 800;
 }
 
-/* =========================
-   Tools Page
-========================= */
+
 
 .tools-page {
     padding: 80px 20px 60px;
@@ -740,9 +704,7 @@ body {
     margin: 0 auto 45px;
 }
 
-/* =========================
-   Inputs
-========================= */
+
 
 input,
 textarea,
@@ -770,9 +732,7 @@ select:focus {
         rgba(23, 105, 255, 0.15);
 }
 
-/* =========================
-   Text Tool
-========================= */
+
 
 .text-tool,
 .calculator-tool,
@@ -859,9 +819,7 @@ select:focus {
     color: var(--blue);
 }
 
-/* =========================
-   Calculator
-========================= */
+
 
 .calculator-tool {
     max-width: 400px;
@@ -927,9 +885,6 @@ select:focus {
     color: white !important;
 }
 
-/* =========================
-   Unit / Grade
-========================= */
 
 .unit-converter-tool,
 .grade-calculator-tool {
@@ -976,9 +931,6 @@ select:focus {
     line-height: 1.8;
 }
 
-/* =========================
-   About
-========================= */
 
 .about-page {
     width: 90%;
@@ -1038,9 +990,7 @@ select:focus {
     color: var(--blue);
 }
 
-/* =========================
-   Stats
-========================= */
+
 
 .site-stats {
     width: 90%;
@@ -1094,9 +1044,6 @@ select:focus {
     font-weight: 600;
 }
 
-/* =========================
-   ZONIVA LOADING
-========================= */
 
 .loading-screen {
     position: fixed;
@@ -1117,7 +1064,7 @@ select:focus {
 }
 
 
-/* Z Logo */
+
 
 .loading-z {
     width: 90px;
@@ -1143,7 +1090,7 @@ select:focus {
 }
 
 
-/* Name */
+
 
 .loading-name {
     margin-top: 18px;
@@ -1157,7 +1104,7 @@ select:focus {
 }
 
 
-/* Loading Line */
+
 
 .loading-line {
     width: 150px;
@@ -1186,7 +1133,7 @@ select:focus {
 }
 
 
-/* Animations */
+
 
 @keyframes zonivaPulse {
 
@@ -1248,9 +1195,7 @@ select:focus {
     }
 }
 
-/* =========================
-   Scrollbar
-========================= */
+
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -1270,9 +1215,7 @@ select:focus {
     border-radius: 20px;
 }
 
-/* =========================
-   Mobile
-========================= */
+
 
 @media (max-width: 700px) {
 
@@ -1452,11 +1395,18 @@ select:focus {
     }
 }
 
-html,
-body {
-    background-color: #ffffff !important;
+html {
+    background: #ffffff !important;
 }
 
 body {
-    min-height: 100vh;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+@media (max-width: 768px) {
+    html,
+    body {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+    }
 }
