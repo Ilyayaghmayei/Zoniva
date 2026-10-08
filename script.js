@@ -377,3 +377,20 @@ if (gradeCalculatorBtn && gradeCalculatorTool) {
     }
 
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    if (!loadingScreen) return;
+
+    setTimeout(function () {
+
+        loadingScreen.style.opacity = "0";
+        loadingScreen.style.visibility = "hidden";
+        loadingScreen.style.pointerEvents = "none";
+
+    }, 3000);
+
+});
