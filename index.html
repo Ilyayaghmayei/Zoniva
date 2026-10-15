@@ -2,274 +2,171 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Zoniva | زونیوا</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
-
 <body>
-<!-- =========================
-     Loading Screen
-========================= -->
-<div class="loading-screen" id="loadingScreen">
 
-    <div class="loading-z">
-        Z
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-z">Z</div>
+        <div class="loading-name">ZONIVA</div>
+        <div class="loading-line">
+            <span></span>
+        </div>
     </div>
 
-    <div class="loading-name">
-        ZONIVA
-    </div>
-
-    <div class="loading-line">
-        <span></span>
-    </div>
-
-</div>
-
-    <!-- =========================
-         Header
-    ========================== -->
-
+    <!-- Header -->
     <header class="header">
 
         <div class="brand">
-
-            <img
-                src="logo.png"
-                alt="Zoniva Logo"
-                class="site-logo"
-            >
-
-            <div class="logo">
-                ZONIVA
-            </div>
-
+            <img src="logo.png" alt="Zoniva Logo" class="site-logo">
+            <div class="logo">ZONIVA</div>
         </div>
 
-
+        <!-- Mobile Menu Button -->
         <button
             class="menu-btn"
             id="menuBtn"
+            type="button"
+            aria-label="باز کردن منو"
+            aria-expanded="false"
+            aria-controls="menu"
         >
-            ☰
+            <span class="menu-icon" aria-hidden="true">☰</span>
         </button>
 
+        <!-- Navigation -->
+        <nav class="menu" id="menu" aria-label="منوی اصلی">
 
-        <nav
-            class="menu"
-            id="menu"
-        >
+            <a href="index.html" aria-current="page">خانه</a>
 
-            <a href="index.html">
-                خانه
-            </a>
+            <a href="tools.html">ابزارها</a>
 
-            <a href="tools.html">
-                ابزارها
-            </a>
-
-            <a href="about.html">
-                درباره ما
-            </a>
+            <a href="about.html">درباره ما</a>
 
         </nav>
 
     </header>
+
+    <!-- Mobile Menu Background -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <main>
+
+        <!-- Hero -->
         <section class="hero">
-    <h1>
-       <span>
-        Zoniva
-       </span>
-    </h1>
 
-    <p>
-        Zoniva مجموعه‌ای از ابزارهای ساده، سریع و کاربردی است
-        که برای دانش‌آموزان،طراحی شده است . ما در تلاشیم تا کار های وقت گیر دانش اموزان نظیر محاسبات و... را در سریع ترین روش ممکن برای ان ها ساده تر کنیم.
-    </p>
+            <h1>
+                <span>Zoniva</span>
+            </h1>
 
-</section>
-<section class="why-zoniva">
-             <h2>
-                چرا Zoniva؟
-            </h2>
+            <p>
+                Zoniva مجموعه‌ای از ابزارهای ساده، سریع و کاربردی است
+                که برای دانش‌آموزان طراحی شده است. ما تلاش می‌کنیم
+                کارهای وقت‌گیر، مانند محاسبات و کارهای روزمره را
+                تا حد امکان ساده‌تر کنیم.
+            </p>
+
+        </section>
+
+        <!-- Why Zoniva -->
+        <section class="why-zoniva">
+
+            <h2>چرا Zoniva؟</h2>
 
             <p class="why-description">
                 ابزارهای ساده، سریع و کاربردی برای انجام کارهای روزمره
             </p>
 
-
             <div class="why-cards">
 
-
                 <div class="why-card">
-
-                    <span>
-                        ⚡
-                    </span>
-
-                    <h3>
-                        سریع
-                    </h3>
-
-                    <p>
-                        ابزارها برای انجام سریع کارها طراحی شده‌اند.
-                    </p>
-
+                    <span>⚡</span>
+                    <h3>سریع</h3>
+                    <p>ابزارها برای انجام سریع کارها طراحی شده‌اند.</p>
                 </div>
 
-
-
                 <div class="why-card">
-
-                    <span>
-                        🛠️
-                    </span>
-
-                    <h3>
-                        کاربردی
-                    </h3>
-
-                    <p>
-                        ابزارهایی که واقعاً در کارهای روزمره به درد می‌خورند.
-                    </p>
-
+                    <span>🛠️</span>
+                    <h3>کاربردی</h3>
+                    <p>ابزارهایی که واقعاً در کارهای روزمره به درد می‌خورند.</p>
                 </div>
 
-
-
                 <div class="why-card">
-
-                    <span>
-                        ✨
-                    </span>
-
-                    <h3>
-                        ساده
-                    </h3>
-
-                    <p>
-                        بدون پیچیدگی؛ فقط وارد شو و از ابزار استفاده کن.
-                    </p>
-
+                    <span>✨</span>
+                    <h3>ساده</h3>
+                    <p>بدون پیچیدگی؛ فقط وارد شو و از ابزار استفاده کن.</p>
                 </div>
-
 
             </div>
 
         </section>
 
-
-
-
+        <!-- Audience -->
         <section class="audience">
 
-            <h2>
-                Zoniva برای چه کسانی است؟
-            </h2>
+            <h2>Zoniva برای چه کسانی است؟</h2>
 
             <p class="audience-description">
                 برای دانش‌آموزان، دانشجویان و هر کسی که
                 به ابزارهای کاربردی نیاز دارد.
             </p>
 
-
             <div class="audience-cards">
 
-
                 <div class="audience-card">
-
-                    <span>
-                        🎓
-                    </span>
-
-                    <h3>
-                       ‌دانش آموزان
-                    </h3>
-
-                    <p>
-                        ابزارهایی برای درس، مدرسه و پروژه‌ها.
-                    </p>
-
+                    <span>🎓</span>
+                    <h3>دانش‌آموزان</h3>
+                    <p>ابزارهایی برای درس، مدرسه و پروژه‌ها.</p>
                 </div>
 
-
-
                 <div class="audience-card">
-
-                    <span>
-                        💻
-                    </span>
-
-                    <h3>
-          دانشجویان
-                    </h3>
-
-                    <p>
-                ابزار های مناسب برای دانشجویان برای راحت تر شدن کار ها
-                    </p>
-
+                    <span>💻</span>
+                    <h3>دانشجویان</h3>
+                    <p>ابزارهایی برای ساده‌تر شدن کارهای دانشجویی.</p>
                 </div>
 
-
-
                 <div class="audience-card">
-
-                    <span>
-                        🌍
-                    </span>
-
-                    <h3>
-                        حتی کسانی که درس نمیخوانند
-                    </h3>
-
-                    <p>
-                        ابزارهای ساده و قابل استفاده برای استفاده کاربردی در کار های روزانه شما.
-                    </p>
-
+                    <span>🌍</span>
+                    <h3>همه افراد</h3>
+                    <p>ابزارهای ساده و کاربردی برای کارهای روزمره.</p>
                 </div>
-
 
             </div>
-        
-</section>
+
+        </section>
+
+        <!-- Call To Action -->
         <section class="cta">
 
-            <h2>
-                آماده‌ای شروع کنی؟
-            </h2>
+            <h2>آماده‌ای شروع کنی؟</h2>
 
             <p>
                 وارد Zoniva شو و ابزار مناسب خودت رو پیدا کن.
             </p>
 
-            <a
-                href="tools.html"
-                class="cta-button"
-            >
+            <a href="tools.html" class="cta-button">
                 ورود به ابزارها
             </a>
 
         </section>
 
-
     </main>
+
     <script src="script.js"></script>
-    
+    <script src="stars.js"></script>
 
 </body>
-
-</html> 
+</html>

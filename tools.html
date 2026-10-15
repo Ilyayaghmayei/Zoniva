@@ -2,668 +2,1287 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ابزارها | Zoniva</title>
+    <meta name="theme-color" content="#050914">
+
+    <meta name="description"
+        content="Zoniva Tools - مجموعه‌ای از ابزارهای کاربردی، سریع و رایگان برای همه">
+
+    <title>ابزارها | Zoniva 2.0</title>
+
+    <link rel="icon" href="logo.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
+    <style>
+        :root {
+            --bg: #050914;
+            --bg-card: #0b1426;
+            --bg-input: #07101f;
+            --blue: #1683ff;
+            --light-blue: #65c7ff;
+            --dark-blue: #0b3f91;
+            --text: #f1f7ff;
+            --muted: #91a6c5;
+            --border: rgba(71, 155, 255, 0.22);
+            --glow: 0 0 25px rgba(22, 131, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Vazirmatn", sans-serif;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .tools-page {
+            width: min(1150px, 92%);
+            margin: 0 auto;
+            padding: 35px 0 80px;
+        }
+
+        .tools-hero {
+            text-align: center;
+            padding: 45px 15px 35px;
+        }
+
+        .tools-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--light-blue);
+            background: rgba(22, 131, 255, 0.08);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .tools-hero h1 {
+            margin: 0 0 16px;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
+        .tools-hero h1 span {
+            color: var(--light-blue);
+            text-shadow: 0 0 24px rgba(101, 199, 255, 0.25);
+        }
+
+        .tools-hero p {
+            max-width: 620px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .tools-search {
+            width: min(520px, 100%);
+            margin: 28px auto 0;
+        }
+
+        .tools-search input {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .tools-search input:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(22, 131, 255, 0.12);
+        }
+
+        .tools-search input::placeholder {
+            color: #6e84a5;
+        }
+
+        .tools-section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 28px 0 22px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .tools-section-title::before {
+            content: "";
+            width: 4px;
+            height: 25px;
+            border-radius: 10px;
+            background: var(--light-blue);
+            box-shadow: 0 0 12px var(--blue);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 220px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background:
+                linear-gradient(145deg, rgba(18, 42, 78, 0.45), transparent 70%),
+                var(--bg-card);
+            box-shadow: var(--glow);
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .tool-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--light-blue));
+            opacity: 0.8;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(101, 199, 255, 0.65);
+            box-shadow: 0 12px 35px rgba(22, 131, 255, 0.13);
+        }
+
+        .tool-icon {
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            border: 1px solid rgba(101, 199, 255, 0.22);
+            background: rgba(22, 131, 255, 0.12);
+            color: var(--light-blue);
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .tool-card h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+        }
+
+        .tool-card p {
+            flex: 1;
+            margin: 0 0 20px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .tool-open-btn,
+        .primary-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border: 1px solid transparent;
+            border-radius: 11px;
+            background: linear-gradient(100deg, var(--dark-blue), var(--blue));
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            transition: filter 0.2s, transform 0.2s;
+        }
+
+        .tool-open-btn:hover,
+        .primary-btn:hover {
+            filter: brightness(1.2);
+            transform: translateY(-1px);
+        }
+
+        .secondary-btn {
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: rgba(22, 131, 255, 0.08);
+            color: var(--light-blue);
+        }
+
+        .secondary-btn:hover {
+            background: rgba(22, 131, 255, 0.17);
+        }
+
+        .tool-empty {
+            display: none;
+            color: var(--muted);
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Modals */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            overflow-y: auto;
+            background: rgba(0, 4, 13, 0.84);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            position: relative;
+            width: min(500px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px;
+            border: 1px solid rgba(101, 199, 255, 0.3);
+            border-radius: 22px;
+            background:
+                linear-gradient(145deg, rgba(14, 39, 75, 0.5), transparent 60%),
+                #080f1e;
+            box-shadow: 0 0 45px rgba(22, 131, 255, 0.13);
+        }
+
+        .modal-content h2 {
+            margin: 0 0 8px;
+            font-size: 23px;
+        }
+
+        .modal-description {
+            margin: 0 0 23px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .close-btn {
+            position: absolute;
+            left: 17px;
+            top: 14px;
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--text);
+            font-size: 22px;
+        }
+
+        .close-btn:hover {
+            background: rgba(22, 131, 255, 0.12);
+            color: var(--light-blue);
+        }
+
+        .field {
+            margin-bottom: 17px;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d8e8ff;
+            font-size: 13px;
+        }
+
+        .field input,
+        .field select,
+        .field textarea,
+        .tool-input {
+            width: 100%;
+            min-width: 0;
+            padding: 12px 14px;
+            color: var(--text);
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            outline: none;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus,
+        .tool-input:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(22, 131, 255, 0.1);
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: #647b9d;
+        }
+
+        .field select option {
+            background: #081120;
+            color: white;
+        }
+
+        .field textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .result-box {
+            margin-top: 18px;
+            padding: 15px;
+            border: 1px solid rgba(101, 199, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(22, 131, 255, 0.07);
+            color: var(--light-blue);
+            overflow-wrap: anywhere;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .result-box:empty {
+            display: none;
+        }
+
+        .result-box div + div {
+            margin-top: 7px;
+        }
+
+        .check-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #d7e8ff;
+            font-size: 13px;
+        }
+
+        .check-item input {
+            accent-color: var(--blue);
+        }
+
+        .small-note {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .rates-updated {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+        }
+
+        .site-footer {
+            margin-top: 65px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .site-footer strong {
+            color: var(--light-blue);
+        }
+
+        @media (max-width: 850px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .tools-page {
+                width: 91%;
+                padding-top: 15px;
+            }
+
+            .tools-hero {
+                padding-top: 35px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .tool-card {
+                min-height: 190px;
+                padding: 22px;
+            }
+
+            .modal-content {
+                padding: 23px 18px;
+            }
+
+            .field-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .tools-section-title {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <main class="tools-page">
 
-    <!-- =========================
-         Header
-    ========================== -->
+        <!-- Header -->
 
-    <header class="header">
+        <header class="tools-hero">
 
-        <div class="brand">
-
-            <img
-                src="logo.png"
-                alt="Zoniva Logo"
-                class="site-logo"
-            >
-
-            <div class="logo">
-                ZONIVA
+            <div class="tools-badge">
+                ZONIVA 2.0 · TOOLS CENTER
             </div>
 
-        </div>
-
-
-        <button
-            class="menu-btn"
-            id="menuBtn"
-        >
-            ☰
-        </button>
-
-
-        <nav
-            class="menu"
-            id="menu"
-        >
-
-            <a href="index.html">
-                خانه
-            </a>
-
-            <a href="tools.html">
-                ابزارها
-            </a>
-
-            <a href="about.html">
-                درباره ما
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <main>
-
-
-        <!-- =========================
-             Tools Page
-        ========================== -->
-
-        <section class="tools-page">
-
             <h1>
-                ابزارهای Zoniva
+                ابزارهای <span>Zoniva</span>
             </h1>
 
             <p>
-                ابزارهای ساده، سریع و کاربردی برای انجام کارهای روزمره
+                ابزارهایی کاربردی، سریع و ساده برای انجام کارهای روزمره؛
+                همه در یک پلتفرم و در دسترس شما.
             </p>
 
+            <div class="tools-search">
+                <input
+                    type="search"
+                    id="toolSearch"
+                    placeholder="جست‌وجو بین ابزارها..."
+                    aria-label="جست‌وجوی ابزارها">
+            </div>
 
-            <!-- =========================
-                 Tool Cards
-            ========================== -->
-
-            <div class="tools-grid">
-
-
-                <!-- Text Counter -->
-
-                <div class="tool-card">
-
-                    <span class="tool-icon">
-                        📝
-                    </span>
-
-                    <h2>
-                        شمارش متن
-                    </h2>
-
-                    <p>
-                        تعداد کلمات و حروف متن خودت رو به‌سرعت بشمار.
-                    </p>
-
-                    <button
-                        class="tool-button"
-                        onclick="openTool('textModal')"
-                    >
-                        استفاده از ابزار
-                    </button>
-
-                </div>
+        </header>
 
 
+        <!-- Tools -->
 
-                <!-- Calculator -->
+        <section aria-labelledby="toolsTitle">
 
-                <div class="tool-card">
+            <h2 class="tools-section-title" id="toolsTitle">
+                همه ابزارها
+            </h2>
 
-                    <span class="tool-icon">
-                        🧮
-                    </span>
+            <div class="tools-grid" id="toolsGrid">
 
-                    <h2>
-                        محاسبه‌گر
-                    </h2>
+                <!-- 1. Text Counter -->
+
+                <article class="tool-card" data-search="متن شمارش کلمه حرف کاراکتر text word character">
+
+                    <div class="tool-icon">Aa</div>
+
+                    <h3>شمارش متن</h3>
 
                     <p>
-                        محاسبات ریاضی خودت رو سریع و ساده انجام بده.
+                        تعداد کلمات، حروف، کاراکترها و خطوط متن خود را محاسبه کنید.
                     </p>
 
-                    <button
-                        class="tool-button"
-                        onclick="openTool('calculatorModal')"
-                    >
-                        استفاده از ابزار
+                    <button class="tool-open-btn" onclick="openTool('textModal')">
+                        باز کردن ابزار ←
                     </button>
 
-                </div>
+                </article>
 
 
+                <!-- 2. Calculator -->
 
-                <!-- Unit Converter -->
+                <article class="tool-card" data-search="ماشین حساب محاسبات ریاضی calculator">
 
-                <div class="tool-card">
+                    <div class="tool-icon">∑</div>
 
-                    <span class="tool-icon">
-                        📏
-                    </span>
-
-                    <h2>
-                        تبدیل واحد
-                    </h2>
+                    <h3>ماشین حساب</h3>
 
                     <p>
-                        واحدهای مختلف را سریع و ساده به یکدیگر تبدیل کن.
+                        محاسبات ریاضی روزمره را به‌سادگی انجام دهید.
                     </p>
 
-                    <button
-                        class="tool-button"
-                        onclick="openTool('unitModal')"
-                    >
-                        استفاده از ابزار
+                    <button class="tool-open-btn" onclick="openTool('calculatorModal')">
+                        باز کردن ابزار ←
                     </button>
 
-                </div>
+                </article>
 
 
+                <!-- 3. Unit Converter -->
 
-                <!-- Grade Calculator -->
+                <article class="tool-card" data-search="تبدیل واحد طول کیلومتر متر سانتی متر میلی متر unit">
 
-                <div class="tool-card">
+                    <div class="tool-icon">↔</div>
 
-                    <span class="tool-icon">
-                        📊
-                    </span>
-
-                    <h2>
-                        محاسبه معدل
-                    </h2>
+                    <h3>تبدیل واحد</h3>
 
                     <p>
-                        نمره‌های خودت رو وارد کن و معدل رو سریع محاسبه کن.
+                        واحدهای طول را به کیلومتر، متر، سانتی‌متر و میلی‌متر تبدیل کنید.
                     </p>
 
-                    <button
-                        class="tool-button"
-                        onclick="openTool('gradeModal')"
-                    >
-                        استفاده از ابزار
+                    <button class="tool-open-btn" onclick="openTool('unitModal')">
+                        باز کردن ابزار ←
                     </button>
 
-                </div>
+                </article>
 
 
+                <!-- 4. Grade Calculator -->
 
-                <!-- Fraction Converter -->
+                <article class="tool-card" data-search="محاسبه معدل نمره مدرسه grade average">
 
-                <div class="tool-card">
+                    <div class="tool-icon">▤</div>
 
-                    <span class="tool-icon">
-                        🔢
-                    </span>
-
-                    <h2>
-                        تبدیل کسر و اعشار
-                    </h2>
+                    <h3>محاسبه معدل</h3>
 
                     <p>
-                        کسر را به اعشار و عدد اعشاری را به کسر تبدیل کن.
+                        نمره‌های خود را وارد کنید و میانگین آن‌ها را به دست آورید.
                     </p>
 
-                    <button
-                        class="tool-button"
-                        onclick="openTool('fractionModal')"
-                    >
-                        استفاده از ابزار
+                    <button class="tool-open-btn" onclick="openTool('gradeModal')">
+                        باز کردن ابزار ←
                     </button>
 
-                </div>
+                </article>
 
+
+                <!-- 5. Fraction Converter -->
+
+                <article class="tool-card" data-search="کسر اعشار تبدیل fraction decimal">
+
+                    <div class="tool-icon">¾</div>
+
+                    <h3>تبدیل کسر و اعشار</h3>
+
+                    <p>
+                        کسرها را به عدد اعشاری و اعداد اعشاری را به کسر تبدیل کنید.
+                    </p>
+
+                    <button class="tool-open-btn" onclick="openTool('fractionModal')">
+                        باز کردن ابزار ←
+                    </button>
+
+                </article>
+
+
+                <!-- 6. Password Generator -->
+
+                <article class="tool-card" data-search="رمز عبور پسورد امنیت password generator">
+
+                    <div class="tool-icon">⌘</div>
+
+                    <h3>ساخت رمز عبور</h3>
+
+                    <p>
+                        رمز عبور تصادفی با حروف، اعداد و نمادها بسازید.
+                    </p>
+
+                    <button class="tool-open-btn" onclick="openTool('passwordModal')">
+                        باز کردن ابزار ←
+                    </button>
+
+                </article>
+
+
+                <!-- 7. Power and Root -->
+
+                <article class="tool-card" data-search="توان ریشه دوم ریاضی power root">
+
+                    <div class="tool-icon">x²</div>
+
+                    <h3>توان و ریشه</h3>
+
+                    <p>
+                        توان اعداد و ریشه دوم آن‌ها را محاسبه کنید.
+                    </p>
+
+                    <button class="tool-open-btn" onclick="openTool('powerModal')">
+                        باز کردن ابزار ←
+                    </button>
+
+                </article>
+
+
+                <!-- 8. Date Difference -->
+
+                <article class="tool-card" data-search="تاریخ اختلاف روز ماه سال شمسی میلادی date difference">
+
+                    <div class="tool-icon">◷</div>
+
+                    <h3>محاسبه اختلاف تاریخ</h3>
+
+                    <p>
+                        اختلاف دو تاریخ را بر اساس تعداد واقعی روزها محاسبه کنید.
+                    </p>
+
+                    <button class="tool-open-btn" onclick="openTool('dateModal')">
+                        باز کردن ابزار ←
+                    </button>
+
+                </article>
+
+
+                <!-- 9. Currency and Gold -->
+
+                <article class="tool-card" data-search="دلار تومان ارز قیمت طلا gold dollar currency">
+
+                    <div class="tool-icon">₮</div>
+
+                    <h3>ارز و طلا</h3>
+
+                    <p>
+                        تبدیل دلار و تومان و محاسبه ارزش تقریبی طلای ۱۸ عیار.
+                    </p>
+
+                    <button class="tool-open-btn" onclick="openTool('currencyModal')">
+                        باز کردن ابزار ←
+                    </button>
+
+                </article>
 
             </div>
+
+            <p class="tool-empty" id="toolEmpty">
+                ابزاری با این نام پیدا نشد.
+            </p>
 
         </section>
 
 
+        <!-- Text Counter Modal -->
 
-        <!-- =========================
-             Text Counter Modal
-        ========================== -->
+        <div class="modal" id="textModal" role="dialog" aria-modal="true" aria-labelledby="textTitle">
 
-        <div
-            class="tool-modal"
-            id="textModal"
-        >
+            <div class="modal-content">
 
-            <div class="tool-modal-box">
+                <button class="close-btn" onclick="closeTool('textModal')" aria-label="بستن">×</button>
 
-                <button
-                    class="tool-modal-close"
-                    onclick="closeTool('textModal')"
-                >
-                    ×
-                </button>
+                <h2 id="textTitle">شمارش متن</h2>
 
-                <section
-                    class="text-tool"
-                    id="textTool"
-                >
+                <p class="modal-description">
+                    متن خود را وارد کنید تا آمار آن نمایش داده شود.
+                </p>
 
-                    <h2>
-                        📝 شمارش متن
-                    </h2>
+                <div class="field">
+                    <label for="textInput">متن شما</label>
 
-                    <textarea
-                        id="textInput"
-                        placeholder="متنت رو اینجا بنویس..."
-                    ></textarea>
+                    <textarea id="textInput" placeholder="متن را اینجا بنویسید..."></textarea>
+                </div>
 
-
-                    <div class="stats">
-
-                        <div>
-
-                            <span id="wordCount">
-                                0
-                            </span>
-
-                            <p>
-                                کلمه
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <span id="charCount">
-                                0
-                            </span>
-
-                            <p>
-                                حرف
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </section>
+                <div class="result-box">
+                    <div>تعداد کلمات: <strong id="wordCount">۰</strong></div>
+                    <div>تعداد حروف و کاراکترها: <strong id="charCount">۰</strong></div>
+                    <div>کاراکتر بدون فاصله: <strong id="charNoSpaceCount">۰</strong></div>
+                    <div>تعداد خطوط: <strong id="lineCount">۰</strong></div>
+                </div>
 
             </div>
 
         </div>
 
 
+        <!-- Calculator Modal -->
 
-        <!-- =========================
-             Calculator Modal
-        ========================== -->
+        <div class="modal" id="calculatorModal" role="dialog" aria-modal="true" aria-labelledby="calculatorTitle">
 
-        <div
-            class="tool-modal"
-            id="calculatorModal"
-        >
+            <div class="modal-content">
 
-            <div class="tool-modal-box">
+                <button class="close-btn" onclick="closeTool('calculatorModal')" aria-label="بستن">×</button>
 
-                <button
-                    class="tool-modal-close"
-                    onclick="closeTool('calculatorModal')"
-                >
-                    ×
-                </button>
+                <h2 id="calculatorTitle">ماشین حساب</h2>
 
-                <section
-                    class="calculator-tool"
-                    id="calculatorTool"
-                >
+                <p class="modal-description">
+                    عبارت ریاضی خود را وارد کنید.
+                </p>
 
-                    <h2>
-                        🧮 محاسبه‌گر
-                    </h2>
-
+                <div class="field">
+                    <label for="calcInput">عبارت ریاضی</label>
 
                     <input
                         type="text"
-                        id="calculatorDisplay"
-                        readonly
-                        placeholder="0"
-                    >
+                        id="calcInput"
+                        class="tool-input"
+                        placeholder="مثال: (12 + 8) * 2">
+                </div>
 
+                <button class="primary-btn" onclick="calculate()">
+                    محاسبه
+                </button>
 
-                    <div class="calculator-buttons">
+                <div class="result-box" id="calcResult" aria-live="polite"></div>
 
-
-                        <button data-value="7">
-                            7
-                        </button>
-
-                        <button data-value="8">
-                            8
-                        </button>
-
-                        <button data-value="9">
-                            9
-                        </button>
-
-                        <button data-value="/">
-                            ÷
-                        </button>
-
-
-                        <button data-value="4">
-                            4
-                        </button>
-
-                        <button data-value="5">
-                            5
-                        </button>
-
-                        <button data-value="6">
-                            6</button>
-
-                        <button data-value="*">
-                            ×
-                        </button>
-
-
-                        <button data-value="1">
-                            1
-                        </button>
-
-                        <button data-value="2">
-                            2
-                        </button>
-
-                        <button data-value="3">
-                            3
-                        </button>
-
-                        <button data-value="-">
-                            −
-                        </button>
-
-
-                        <button data-value="0">
-                            0
-                        </button>
-
-                        <button data-value=".">
-                            .
-                        </button>
-
-                        <button id="clearCalculator">
-                            C
-                        </button>
-
-                        <button data-value="+">
-                            +
-                        </button>
-
-
-                        <button
-                            id="calculateResult"
-                            class="equal-button"
-                        >
-                            =
-                        </button>
-
-
-                    </div>
-
-                </section>
+                <p class="small-note">
+                    عملگرهای پایه پشتیبانی می‌شوند: + ، − ، × ، ÷ و پرانتز.
+                </p>
 
             </div>
 
         </div>
 
 
+        <!-- Unit Converter Modal -->
 
-        <!-- =========================
-             Unit Converter Modal
-        ========================== -->
+        <div class="modal" id="unitModal" role="dialog" aria-modal="true" aria-labelledby="unitTitle">
 
-        <div
-            class="tool-modal"
-            id="unitModal"
-        >
+            <div class="modal-content">
 
-            <div class="tool-modal-box">
+                <button class="close-btn" onclick="closeTool('unitModal')" aria-label="بستن">×</button>
 
-                <button
-                    class="tool-modal-close"
-                    onclick="closeTool('unitModal')"
-                >
-                    ×
-                </button>
+                <h2 id="unitTitle">تبدیل واحد طول</h2>
 
-                <section
-                    class="unit-converter-tool"
-                    id="unitConverterTool"
-                >
+                <p class="modal-description">
+                    مقدار و واحد مبدأ و مقصد را انتخاب کنید.
+                </p>
 
-                    <h2>
-                        📏 تبدیل واحد
-                    </h2>
-
+                <div class="field">
+                    <label for="unitInput">مقدار</label>
 
                     <input
                         type="number"
                         id="unitInput"
-                        placeholder="مقدار را وارد کن"
-                    >
+                        class="tool-input"
+                        placeholder="مقدار را وارد کنید">
+                </div>
 
+                <div class="field-row">
 
-                    <select id="unitFrom">
+                    <div class="field">
+                        <label for="unitFrom">تبدیل از</label>
 
-                        <option value="km">
-                            کیلومتر
-                        </option>
-
-                        <option value="m">
-                            متر
-                        </option>
-
-                        <option value="cm">
-                            سانتی‌متر
-                        </option>
-
-                    </select>
-
-
-                    <select id="unitTo">
-
-                        <option value="km">
-                            کیلومتر
-                        </option>
-
-                        <option value="m">
-                            متر
-                        </option>
-
-                        <option value="cm">
-                            سانتی‌متر
-                        </option>
-
-                    </select>
-
-
-                    <button
-                        id="convertUnit"
-                        class="tool-button"
-                    >
-                        تبدیل
-                    </button>
-
-
-                    <div
-                        id="unitResult"
-                        class="unit-result"
-                    >
-                        نتیجه اینجا نمایش داده می‌شود
+                        <select id="unitFrom">
+                            <option value="mm">میلی‌متر</option>
+                            <option value="cm">سانتی‌متر</option>
+                            <option value="m" selected>متر</option>
+                            <option value="km">کیلومتر</option>
+                        </select>
                     </div>
 
-                </section>
+                    <div class="field">
+                        <label for="unitTo">تبدیل به</label>
+
+                        <select id="unitTo">
+                            <option value="mm">میلی‌متر</option>
+                            <option value="cm">سانتی‌متر</option>
+                            <option value="m">متر</option>
+                            <option value="km" selected>کیلومتر</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="primary-btn" onclick="convertUnit()">
+                    تبدیل واحد
+                </button>
+
+                <div class="result-box" id="unitResult" aria-live="polite"></div>
 
             </div>
 
         </div>
 
 
+        <!-- Grade Calculator Modal -->
 
-        <!-- =========================
-             Grade Calculator Modal
-        ========================== -->
+        <div class="modal" id="gradeModal" role="dialog" aria-modal="true" aria-labelledby="gradeTitle">
 
-        <div
-            class="tool-modal"
-            id="gradeModal"
-        >
+            <div class="modal-content">
 
-            <div class="tool-modal-box">
+                <button class="close-btn" onclick="closeTool('gradeModal')" aria-label="بستن">×</button>
 
-                <button
-                    class="tool-modal-close"
-                    onclick="closeTool('gradeModal')"
-                >
-                    ×
+                <h2 id="gradeTitle">محاسبه معدل</h2>
+
+                <p class="modal-description">
+                    نمره‌ها را با فاصله یا ویرگول از هم جدا کنید.
+                </p>
+
+                <div class="field">
+                    <label for="gradeInput">نمره‌ها از ۰ تا ۲۰</label>
+
+                    <textarea
+                        id="gradeInput"
+                        placeholder="مثال: 18, 19, 16.5, 20"></textarea>
+                </div>
+
+                <button class="primary-btn" onclick="calculateGrade()">
+                    محاسبه معدل
                 </button>
 
-                <section
-                    class="grade-calculator-tool"
-                    id="gradeCalculatorTool"
-                ><h2>
-                        📊 محاسبه معدل
-                    </h2>
+                <div class="result-box" id="gradeResult" aria-live="polite"></div>
 
+                <p class="small-note">
+                    این ابزار میانگین ساده نمره‌ها را محاسبه می‌کند.
+                    برای معدل وزنی، ضریب هر درس باید جداگانه وارد شود.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Fraction Converter Modal -->
+
+        <div class="modal" id="fractionModal" role="dialog" aria-modal="true" aria-labelledby="fractionTitle">
+
+            <div class="modal-content">
+
+                <button class="close-btn" onclick="closeTool('fractionModal')" aria-label="بستن">×</button>
+
+                <h2 id="fractionTitle">تبدیل کسر و اعشار</h2>
+
+                <p class="modal-description">
+                    یک کسر مثل 3/4 یا یک عدد اعشاری وارد کنید.
+                </p>
+
+                <div class="field">
+                    <label for="fractionInput">کسر یا عدد</label>
+
+                    <input
+                        type="text"
+                        id="fractionInput"
+                        class="tool-input"
+                        placeholder="مثال: 3/4 یا 0.75">
+                </div>
+
+                <div class="button-row">
+
+                    <button class="primary-btn" onclick="fractionToDecimal()">
+                        کسر به اعشار
+                    </button>
+
+                    <button class="secondary-btn" onclick="decimalToFraction()">
+                        اعشار به کسر
+                    </button>
+
+                </div>
+
+                <div class="result-box" id="fractionResult" aria-live="polite"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Password Generator Modal -->
+
+        <div class="modal" id="passwordModal" role="dialog" aria-modal="true" aria-labelledby="passwordTitle">
+
+            <div class="modal-content">
+
+                <button class="close-btn" onclick="closeTool('passwordModal')" aria-label="بستن">×</button>
+
+                <h2 id="passwordTitle">ساخت رمز عبور</h2>
+
+                <p class="modal-description">
+                    رمز تصادفی متناسب با نیاز خود بسازید.
+                </p>
+
+                <div class="field">
+                    <label for="passwordLength">طول رمز عبور</label>
 
                     <input
                         type="number"
-                        id="gradeInput"
-                        placeholder="نمره را وارد کن"
-                        min="0"
-                        max="20"
-                        step="0.01"
-                    >
+                        id="passwordLength"
+                        min="1"
+                        max="256"
+                        value="16">
+                </div>
 
+                <div class="check-list">
 
-                    <button
-                        id="addGrade"
-                        class="tool-button"
-                    >
-                        اضافه کردن نمره
+                    <label class="check-item">
+                        <input type="checkbox" id="passwordUpper" checked>
+                        حروف بزرگ انگلیسی
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" id="passwordLower" checked>
+                        حروف کوچک انگلیسی
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" id="passwordNumbers" checked>
+                        اعداد
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" id="passwordSymbols" checked>
+                        نمادهای خاص
+                    </label>
+
+                </div>
+
+                <div class="field">
+                    <label for="passwordResult">رمز ساخته‌شده</label>
+
+                    <input
+                        type="text"
+                        id="passwordResult"
+                        class="tool-input"
+                        readonly
+                        placeholder="رمز شما اینجا نمایش داده می‌شود">
+                </div>
+
+                <div class="button-row">
+
+                    <button class="primary-btn" onclick="generatePassword()">
+                        ساخت رمز جدید
                     </button>
 
-
-                    <div
-                        id="gradesList"
-                        class="grades-list"
-                    ></div>
-
-
-                    <button
-                        id="calculateAverage"
-                        class="tool-button"
-                    >
-                        محاسبه معدل
+                    <button class="secondary-btn" onclick="copyPassword()">
+                        کپی رمز
                     </button>
 
+                </div>
 
-                    <div
-                        id="averageResult"
-                        class="unit-result"
-                    >
-                        معدل اینجا نمایش داده می‌شود
-                    </div>
-
-                </section>
+                <div class="result-box" id="passwordMessage" aria-live="polite"></div>
 
             </div>
 
         </div>
 
 
+        <!-- Power and Root Modal -->
 
-        <!-- =========================
-             Fraction Converter Modal
-        ========================== -->
+        <div class="modal" id="powerModal" role="dialog" aria-modal="true" aria-labelledby="powerTitle">
 
-        <div
-            class="tool-modal"
-            id="fractionModal"
-        >
+            <div class="modal-content">
 
-            <div class="tool-modal-box">
+                <button class="close-btn" onclick="closeTool('powerModal')" aria-label="بستن">×</button>
 
-                <button
-                    class="tool-modal-close"
-                    onclick="closeTool('fractionModal')"
-                >
-                    ×
-                </button>
+                <h2 id="powerTitle">توان و ریشه</h2>
 
-
-                <h2>
-                    🔢 تبدیل کسر و اعشار
-                </h2>
-
-
-                <p>
-                    کسر یا عدد اعشاری خود را وارد کنید.
+                <p class="modal-description">
+                    برای اعداد صحیح بزرگ نیز می‌توانید از محاسبه توان استفاده کنید.
                 </p>
 
+                <div class="field">
+                    <label for="powerNumber">عدد پایه</label>
 
-                <input
-                    type="text"
-                    id="fractionInput"
-                    placeholder="مثلاً 3/4 یا 0.75"
-                >
+                    <input
+                        type="text"
+                        id="powerNumber"
+                        class="tool-input"
+                        inputmode="decimal"
+                        placeholder="مثال: 12">
+                </div>
 
+                <div class="field">
+                    <label for="powerExponent">توان</label>
 
-                <div class="fraction-buttons">
+                    <input
+                        type="text"
+                        id="powerExponent"
+                        class="tool-input"
+                        inputmode="numeric"
+                        placeholder="مثال: 5">
+                </div>
 
-                    <button onclick="fractionToDecimal()">
-                        کسر → اعشار
+                <div class="button-row">
+
+                    <button class="primary-btn" onclick="calculatePower()">
+                        محاسبه توان
                     </button>
 
-                    <button onclick="decimalToFraction()">
-                        اعشار → کسر
+                    <button class="secondary-btn" onclick="calculateRoot()">
+                        محاسبه ریشه دوم
                     </button>
 
                 </div>
 
+                <div class="result-box" id="powerResult" aria-live="polite"></div>
 
-                <div id="fractionResult">
-                    نتیجه اینجا نمایش داده می‌شود
-                </div>
-
+                <p class="small-note">
+                    محاسبات اعداد صحیح بزرگ ممکن است بسته به اندازه عدد،
+                    زمان و حافظه بیشتری نیاز داشته باشند.
+                </p>
 
             </div>
 
         </div>
 
+
+        <!-- Date Difference Modal -->
+
+        <div class="modal" id="dateModal" role="dialog" aria-modal="true" aria-labelledby="dateTitle">
+
+            <div class="modal-content">
+
+                <button class="close-btn" onclick="closeTool('dateModal')" aria-label="بستن">×</button>
+
+                <h2 id="dateTitle">محاسبه اختلاف تاریخ</h2>
+
+                <p class="modal-description">
+                    دو تاریخ را انتخاب کنید تا اختلاف روزها و تفکیک تقویمی محاسبه شود.
+                </p>
+
+                <div class="field">
+                    <label for="startDate">تاریخ شروع</label>
+
+                    <input type="date" id="startDate">
+                </div>
+
+                <div class="field">
+                    <label for="endDate">تاریخ پایان</label>
+
+                    <input type="date" id="endDate">
+                </div>
+
+                <button class="primary-btn" onclick="calculateDateDifference()">
+                    محاسبه اختلاف تاریخ
+                </button>
+
+                <div class="result-box" id="dateResult" aria-live="polite"></div>
+
+                <p class="small-note">
+                    انتخاب تاریخ در این نسخه با تقویم میلادی مرورگر انجام می‌شود.
+                    تاریخ شمسی نیز در نتیجه نمایش داده می‌شود.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Currency and Gold Modal -->
+
+        <div class="modal" id="currencyModal" role="dialog" aria-modal="true" aria-labelledby="currencyTitle">
+
+            <div class="modal-content">
+
+                <button class="close-btn" onclick="closeTool('currencyModal')" aria-label="بستن">×</button>
+
+                <h2 id="currencyTitle">ارز و طلا</h2>
+
+                <p class="modal-description">
+                    نرخ‌های دریافت‌شده از منبع آنلاین را بررسی کنید و تبدیل انجام دهید.
+                </p>
+
+                <div class="field">
+                    <label for="dollarRate">قیمت هر دلار به تومان</label>
+
+                    <input
+                        type="number"
+                        id="dollarRate"
+                        class="tool-input"
+                        min="0"
+                        placeholder="در حال دریافت نرخ...">
+                </div>
+
+                <p class="rates-updated" id="ratesUpdated" aria-live="polite">
+                    در حال دریافت قیمت‌ها...
+                </p>
+
+                <hr style="border:0;border-top:1px solid var(--border);margin:22px 0;">
+
+                <h3 style="font-size:16px;margin-bottom:15px;">
+                    تبدیل دلار به تومان
+                </h3>
+
+                <div class="field">
+                    <label for="currencyAmount">مقدار دلار</label>
+
+                    <input
+                        type="number"
+                        id="currencyAmount"
+                        class="tool-input"
+                        min="0"
+                        placeholder="مثال: 100">
+                </div>
+
+                <button class="primary-btn" onclick="convertDollar()">
+                    تبدیل به تومان
+                </button>
+
+                <div class="result-box" id="dollarResult" aria-live="polite"></div>
+
+
+                <hr style="border:0;border-top:1px solid var(--border);margin:22px 0;">
+
+                <h3 style="font-size:16px;margin-bottom:15px;">
+                    تبدیل تومان به دلار
+                </h3>
+
+                <div class="field">
+                    <label for="tomanAmount">مبلغ به تومان</label>
+
+                    <input
+                        type="number"
+                        id="tomanAmount"
+                        class="tool-input"
+                        min="0"
+                        placeholder="مثال: 1000000">
+                </div>
+
+                <button class="primary-btn" onclick="convertToman()">
+                    تبدیل به دلار
+                </button>
+
+                <div class="result-box" id="tomanResult" aria-live="polite"></div>
+
+
+                <hr style="border:0;border-top:1px solid var(--border);margin:22px 0;">
+
+                <h3 style="font-size:16px;margin-bottom:15px;">
+                    محاسبه ارزش طلای ۱۸ عیار
+                </h3>
+
+                <div class="field">
+                    <label for="goldPrice">قیمت هر گرم طلا به تومان</label>
+
+                    <input
+                        type="number"
+                        id="goldPrice"
+                        class="tool-input"
+                        min="0"
+                        placeholder="در حال دریافت نرخ...">
+                </div>
+
+                <div class="field">
+                    <label for="goldWeight">وزن طلا به گرم</label>
+
+                    <input
+                        type="number"
+                        id="goldWeight"
+                        class="tool-input"
+                        min="0"
+                        step="any"
+                        placeholder="مثال: 2.5">
+                </div>
+
+                <button class="primary-btn" onclick="calculateGold()">
+                    محاسبه ارزش طلا
+                </button>
+
+                <div class="result-box" id="goldResult" aria-live="polite"></div>
+
+                <p class="small-note">
+                    قیمت‌ها تقریبی هستند و ممکن است با بازار تفاوت داشته باشند.
+                    اجرت، مالیات و سود فروشنده در محاسبه طلا لحاظ نشده است.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <footer class="site-footer">
+
+            <p>
+                ساخته‌شده با 💙 برای ساده‌تر کردن کارهای روزمره
+            </p>
+
+            <p>
+                <strong>Zoniva 2.0</strong> — Tools that make everyday work easier.
+            </p>
+
+        </footer>
 
     </main>
 
 
+    <!-- Tool Search -->
+
+    <script>
+        const toolSearch = document.getElementById("toolSearch");
+        const toolCards = document.querySelectorAll(".tool-card");
+        const toolEmpty = document.getElementById("toolEmpty");
+
+        if (toolSearch) {
+            toolSearch.addEventListener("input", function () {
+                const query = this.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                toolCards.forEach(card => {
+                    const searchableText =
+                        (card.innerText + " " + (card.dataset.search || ""))
+                        .toLowerCase();
+
+                    const visible = searchableText.includes(query);
+
+                    card.style.display = visible ? "" : "none";
+
+                    if (visible) visibleCount++;
+                });
+
+                toolEmpty.style.display =
+                    visibleCount === 0 ? "block" : "none";
+            });
+        }
+    </script>
+
+
+    <!-- Main Scripts -->
 
     <script src="script.js"></script>
+
+    <!-- Animated Stars Background -->
+
+    <script src="stars.js"></script>
 
 </body>
 
